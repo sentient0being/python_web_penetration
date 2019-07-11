@@ -1,6 +1,6 @@
 import requests
 
-
+#dicts = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz.'
 dicts = '0123456789abcdefghijklmnopqrstuvwsyz'
 number = range(1,31)
 
