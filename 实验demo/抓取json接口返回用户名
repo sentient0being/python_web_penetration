@@ -1,0 +1,27 @@
+import requests
+import re
+
+
+get_user_url = 'http://www.test.com/page/json'
+
+payload = {"pageNo":"1","pageSize":"1000","expire":"false"}
+
+pattern = re.compile(r'applicantCode":"(\w+)"')
+
+def get_user():
+	r = requests.post(get_user_url,data = payload)
+	result = pattern.findall(r.text)
+	
+	try:
+		f = open('1.txt','w')
+		for x in result:
+			f.write(x+'\n')
+	finally:
+		if f:
+			f.close()
+	
+	print(len(result))
+	print(result[105])
+	
+if __name__ == "__main__":
+	get_user()
